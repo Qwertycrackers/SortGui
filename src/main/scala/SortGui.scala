@@ -2,6 +2,7 @@ import scala.swing._
 
 class SortGui extends MainFrame {
     title = "List some sortable things" 
+    minimumSize = new Dimension(700,700)
     val list = new ListView(new Array[Item](0)) //list of all the items
     list.minimumSize= new Dimension(100,25)
     val input = new ItemInputBox(list.listData_= _, list.listData _) //the place to input the items
