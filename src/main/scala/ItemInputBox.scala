@@ -5,6 +5,9 @@ class ItemInputBox(input: (Seq[Item]) => Unit, source: () => Seq[Item]) extends 
     itemName.editable = true
     val index = new TextField
     index.editable = true
+    val textBoxSize = new Dimension(200,20)
+    itemName.maximumSize = textBoxSize
+    index.maximumSize = textBoxSize
     val send = new Action("send an item") {
         def apply(): Unit = { sendItem() }
     }
@@ -18,8 +21,7 @@ class ItemInputBox(input: (Seq[Item]) => Unit, source: () => Seq[Item]) extends 
         contents += index
     }
     contents += Swing.HStrut(10)
-    val addItem = Button("Add Item!") {sendItem _}
-    addItem.preferredSize = new Dimension(50, 20)
+    val addItem = Button("Add Item!") {sendItem}
     contents += addItem
 
     private def sendItem() = {
