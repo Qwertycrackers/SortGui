@@ -1,5 +1,5 @@
 import scala.swing._
-
+/** Application allowing the user to enter data and have it sorted. */
 class SortGui extends MainFrame {
     title = "List some sortable things" 
     minimumSize = new Dimension(700,700)

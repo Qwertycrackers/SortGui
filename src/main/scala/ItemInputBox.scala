@@ -1,5 +1,11 @@
 import scala.swing._
-
+/** A box self-containing an input gui for `Item`s. 
+ *  If I were interested in making this project really good, the two member functions would be replaced with
+ *  a single apply() returning the `Item`, and the rest of the functionality would be moved out of the class.
+ *  
+ *  @param input Function acception a `Seq[Item]`, where the box will place new `Item`s generated
+ *  @param source Function giving a `Seq[Item]` on which to append new items
+ */
 class ItemInputBox(input: (Seq[Item]) => Unit, source: () => Seq[Item]) extends BoxPanel(Orientation.Horizontal) {
     val itemName = new TextField
     itemName.editable = true
